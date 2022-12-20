@@ -6,23 +6,17 @@ import path from 'path';
 import laravel from 'laravel-vite-plugin';
 import restart from 'vite-plugin-restart';
 
-async function getServerConf() {
+async function __https({ crt, key }) {
     let https = null;
-
     try {
         https = {
-            key: fs.readFileSync(process.env.VITE_SERVER_KEY),
-            cert: fs.readFileSync(process.env.VITE_SERVER_CERT),
+            cert: fs.readFileSync(crt),
+            key: fs.readFileSync(key),
         };
     } catch (err) {
-        console.log(err);
-        await getServerConf();
+        await __https({ crt: crt, key: key });
     }
-
-    let hmr = { host: process.env.VITE_SERVER_HMR };
-    let certpath = process.env.VITE_SERVER_CERT;
-
-    return { https, hmr, certpath };
+    return https;
 }
 
 export default defineConfig(async ({ mode }) => {
@@ -31,14 +25,20 @@ export default defineConfig(async ({ mode }) => {
         ...loadEnv(mode, process.cwd(), 'VITE_SERVER'),
     };
 
-    const { https, hmr, certpath } = await getServerConf();
+    const https = await __https({
+        crt: process.env.VITE_SERVER_CRT,
+        key: process.env.VITE_SERVER_KEY,
+    });
 
     return {
         server: {
             host: true,
             port: 5173,
             https: https,
-            hmr: hmr,
+            hmr: {
+                host: process.env.VITE_SERVER_HMR,
+                clientPort: 443,
+            },
         },
         resolve: {
             alias: {
@@ -48,7 +48,9 @@ export default defineConfig(async ({ mode }) => {
         },
         plugins: [
             restart({
-                restart: [certpath],
+                restart: [
+                    path.relative(__dirname, process.env.VITE_SERVER_CRT),
+                ],
             }),
             laravel({
                 input: ['./resources/js/main.js'],
