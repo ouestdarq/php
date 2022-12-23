@@ -1,6 +1,5 @@
 {
     "private": true,
-    "type": "module",
     "scripts": {
         "dev": "vite",
         "build": "vite build"
@@ -13,6 +12,6 @@
         "lodash": "^4.17.21",
         "sass": "^1.57.0",
         "vite": "^4.0.1",
-        "vite-plugin-restart": "^0.3.0"
+        "vite-plugin-smallstep": "github:proxymurder/vite-plugin-smallstep"
     }
 }
