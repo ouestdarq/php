@@ -2,32 +2,44 @@
 
 Copy .env.example into .env
 
-`cp .env.example .env //`
+```
+cp .env.example .env
+```
 
 `APP_NAME`, `APP_URL`, and `DB_NAME` are set to default value and can be either left at that or customized at will.
 `DB_HOST` is set to db which is default docker mysql service, but can be changed into `127.0.0.1` if using database over local network.
 
 Install composer vendor packages.
 
-`composer install`
+```
+composer install
+```
 
 Finally, install artisan key.
 
-`artisan key:generate`
+```
+artisan key:generate
+```
 
 ## JavaScript
 
 Install node modules
 
-`npm install`
+```
+npm install
+```
 
 Run vite server
 
-`npm run dev`
+```
+npm run dev
+```
 
 Compile for production
 
-`npm run build`
+```
+npm run build
+```
 
 ## Vite
 
