@@ -1,37 +1,38 @@
 ## Php
 
-### Install composer packages
+Copy .env.example into .env
 
-```
-composer install
-```
+`cp .env.example .env //`
+
+`APP_NAME`, `APP_URL`, and `DB_NAME` are set to default value and can be either left at that or customized at will.
+`DB_HOST` is set to db which is default docker mysql service, but can be changed into `127.0.0.1` if using database over local network.
+
+Install composer vendor packages.
+
+`composer install`
+
+Finally, install artisan key.
+
+`artisan key:generate`
 
 ## JavaScript
 
-### Install node modules
+Install node modules
 
-```
-npm install
-```
+`npm install`
 
-### Start development server
+Run vite server
 
-```
-npm run dev
-```
+`npm run dev`
 
-### Compile for production
+Compile for production
 
-```
-npm run build
-```
+`npm run build`
 
 ## Vite
 
-`VITE_SERVER_` environement variables need to be set in order for https, hmr, and vite-plugin-restart to work correctly.
+`VITE_` environement variables need to be set in order for https and hmr to work correctly.
 
-`VITE_SERVER_KEY` and `VITE_SERVER_CERT` point to the ssl/tls certificate key pair location.
+`VITE_STEPPATH` serves as the location of `site.crt/site.key` pair for vite-plugin-smallstep.
 
-`VITE_SERVER_CERT` serves also as the location set to watch changes and restart whenever certificates are updated via the vite-plugin-restart.
-
-`VITE_SERVER_HMR` ¡Important! Laravel only. Serves to indicate laravel where hmr is coming from.
+`VITE_HMR_HOST`, `VITE_HMR_CLIENTPORT` variables to indicate laravel where hmr is coming from.
