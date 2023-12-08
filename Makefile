@@ -1,10 +1,4 @@
-all:
-
-php-laravel:
-	php-laravel-artisan php-laravel-npm
+all: php
 	
-php-laravel-artisan:
-	docker build -t proxymurder:php:laravel ./Dockerfile
-
-php-laravel-npm:
-	docker build -t proxymurder:php:npm ./Dockerfile.js
+php:
+	docker build -t proxymurder/php:latest -f Dockerfile ./
