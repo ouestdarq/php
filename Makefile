@@ -1,4 +1,4 @@
-all: php
+all: docker-php-service
 	
-php:
+docker-php-service:
 	docker build -t proxymurder/php:latest -f Dockerfile ./
