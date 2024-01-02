@@ -1,4 +1,4 @@
 @extends('layout')
 @section('content')
-vea pues perro
+    vea pues perro
 @endsection
