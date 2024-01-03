@@ -6,13 +6,14 @@
         "build": "vite build"
     },
     "devDependencies": {
+        "@vitejs/plugin-vue": "^5.0.2",
         "axios": "^1.6.1",
-        "laravel-vite-plugin": "^1.0.0",
-        "vite": "^5.0.0",
-        "vite-plugin-smallstep": "github:proxymurder/vite-plugin-smallstep"
-    },
-    "dependencies": {
+        "bootstrap-icons": "^1.11.2",
         "bootstrap-scss": "^5.3.2",
-        "sass": "^1.69.7"
+        "laravel-vite-plugin": "^1.0.0",
+        "sass": "^1.69.7",
+        "vite": "^5.0.0",
+        "vite-plugin-smallstep": "github:proxymurder/vite-plugin-smallstep",
+        "vue": "^3.4.3"
     }
 }
