@@ -18,13 +18,13 @@ However thus far, we've encountered that there is a change in the way passport i
 Before, we had more methods available to call the routes since we could register:
 
 ```
-// Passport::routes(
-//     function ($router) {
-//         $router->forAuthorization();
-//         $router->forAccessTokens();
-//         $router->forTransientTokens();
-//     }
-// );
+Passport::routes(
+    function ($router) {
+        $router->forAuthorization();
+        $router->forAccessTokens();
+        $router->forTransientTokens();
+    }
+);
 ```
 
 These are no longer available and have been replaced by `Passport::registerRoutes` which registers routes contained within
