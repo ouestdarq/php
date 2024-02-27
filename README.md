@@ -36,12 +36,14 @@ Passport::ignoreRoutes();
 Passport::$registersRoutes = false;
 ```
 
-\*\* I fail to see what is the use behind having a static method `Passport::registerRoutes` that both changes the `public static variable ($registersRoutes)`
-to `false` and returns a `new static (Passport::class)` rathen than just changing the static variable.
+\*\* I fail to see what is the use behind having a static method `Passport::registerRoutes` that both changes the `public static variable ($registersRoutes)` to `false` and returns a `new static (Passport::class)` rathen than just changing the static variable value.
+
 Same thing can be said for methods like:
 
--   Passport::hashClientSecrets
--   Passport::ignoreMigrations
+-   `Passport::hashClientSecrets`
+-   `Passport::ignoreMigrations`
+
+\*\* fail to understand as well why is it that we are returning a `new static` instead of `$this` for example.
 
 `routes/oauth.php` file registers the routes for the `/login` view `get` and `post` routes.
 Loaded by `App/Providers/RouteServiceProvider` with `web (middleware)`.
