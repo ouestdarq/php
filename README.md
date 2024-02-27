@@ -1,15 +1,13 @@
 # Laravel App
 
-Laravel application has, at the moment, serves two purposes. `Authentication` and (JSON only) `application programming interface (API)`.
+Laravel application, at the moment, serves two purposes. `Authentication` and (JSON only) `application programming interface (API)`.
 Both of these functionalities are made possible with the assistance of one or more packages. More notably we have:
 
 -   Laravel's (own) [Passport](https://github.com/laravel/passport) for `authentication`, which seems to be the official implementation of
     [thephpleague/oauth2-server](https://github.com/thephpleague/oauth2-server).
 -   [Laravel JSON API](https://github.com/laravel-json-api/laravel) package for (JSON only) `API`.
 
-*   Further research has to be made on these packages
-
--   [oauth2-server-bundle](https://github.com/thephpleague/oauth2-server-bundle) // For Symphony
+\*\* Further research has to be made on these packages. [oauth2-server-bundle](https://github.com/thephpleague/oauth2-server-bundle) // For Symphony
 
 ## Passport Authentication/Authorization
 
