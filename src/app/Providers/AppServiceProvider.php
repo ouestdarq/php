@@ -12,7 +12,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        Passport::ignoreRoutes();
+        // Passport::ignoreRoutes();
+        Passport::$registersRoutes = false;
     }
 
     /**

@@ -11,10 +11,37 @@ Both of these functionalities are made possible with the assistance of one or mo
 
 ## Passport Authentication/Authorization
 
-The default authentification package for managing requests is [Laravel Passport]().
-
 Changes to this package have been made that we have yet to explore.
+
 However thus far, we've encountered that there is a change in the way passport is registering their routes.
+
+Before, we had more methods available to call the routes since we could register:
+
+```
+// Passport::routes(
+//     function ($router) {
+//         $router->forAuthorization();
+//         $router->forAccessTokens();
+//         $router->forTransientTokens();
+//     }
+// );
+```
+
+These are no longer available and have been replaced by `Passport::registerRoutes` which registers routes contained within
+`vendor/laravel/passport/routes/web.php` if `Passport::$registersRoutes` is false which can be accomplished by declaring either
+of the following on the `boot` method of `app/Providers/AppServiceProvider`.
+
+```
+Passport::ignoreRoutes();
+Passport::$registersRoutes = false;
+```
+
+\*\* I fail to see what is the use behind having a static method `Passport::registerRoutes` that both changes the `public static variable ($registersRoutes)`
+to `false` and returns a `new static (Passport::class)` rathen than just changing the static variable.
+Same thing can be said for methods like:
+
+-   Passport::hashClientSecrets
+-   Passport::ignoreMigrations
 
 `routes/oauth.php` file registers the routes for the `/login` view `get` and `post` routes.
 Loaded by `App/Providers/RouteServiceProvider` with `web (middleware)`.
