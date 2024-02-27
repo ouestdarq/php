@@ -1,29 +1,35 @@
-import "./bootstrap";
-import "@/scss/app.scss";
+// import "./bootstrap";
+// import "@/scss/app.scss";
 
-import { createApp } from "vue";
-import LoginView from "./components/LoginComponents/LoginView.vue";
+// import { createApp } from "vue";
+// import { prefersColor, prefersColorScheme } from "./prefersColorScheme.js";
+// import LoginView from "./components/LoginComponents/LoginView.vue";
 
-const app = createApp({
-    data() {
-        return {
-            message: "some message",
-        };
-    },
-    components: {
-        LoginView,
-    },
-});
+// const themeAttribute = "data-bs-theme";
 
-app.mount("#app");
+// const app = createApp({});
 
-// const app = createApp({
-//     mounted() {
-//         console.log("The app is working");
+// app.component("login-view", LoginView);
+
+// app.directive("prefers-color-scheme", {
+//     created: function (el, binding) {
+//         console.log(binding);
+//         el.setAttribute(themeAttribute, prefersColor(prefersColorScheme.value));
 //     },
-//     // components: {
-//     //     LoginView,
-//     // },
+//     mounted: function (el, binding) {
+//         let f = function (e) {
+//             if (binding.value(e, el))
+//                 prefersColorScheme.value.removeEventListener("change", f);
+//         };
+//         prefersColorScheme.value.addEventListener("change", f);
+//     },
 // });
+
+// app.provide("prefers-color-scheme", {
+//     prefersColor,
+//     themeAttribute,
+// });
+
+// app.mount("#app");
 
 // app.mount("#app");
