@@ -1,11 +1,22 @@
-# Laravel API
+# Laravel App
+
+Laravel application has, at the moment, serves two purposes. `Authentication` and (JSON only) `application programming interface (API)`.
+Both of these functionalities are made possible with the assistance of one or more packages. More notably we have:
+
+-   Laravel's (own) [Passport](https://github.com/laravel/passport) for `authentication`, which seems to be the official implementation of
+    [thephpleague/oauth2-server](https://github.com/thephpleague/oauth2-server).
+-   [Laravel JSON API](https://github.com/laravel-json-api/laravel) package for (JSON only) `API`.
+
+*   Further research has to be made on these packages
+
+-   [oauth2-server-bundle](https://github.com/thephpleague/oauth2-server-bundle) // For Symphony
 
 ## Passport Authentication/Authorization
 
 The default authentification package for managing requests is [Laravel Passport]().
 
-Changes to this package have been made that we have yet to explore. In the meantime,
-these are the compliments to make the package work done so far.
+Changes to this package have been made that we have yet to explore.
+However thus far, we've encountered that there is a change in the way passport is registering their routes.
 
 `routes/oauth.php` file registers the routes for the `/login` view `get` and `post` routes.
 Loaded by `App/Providers/RouteServiceProvider` with `web (middleware)`.
