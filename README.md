@@ -51,7 +51,6 @@ php artisan passport:client --public
 ```
 
 Please note `Client ID` value for future reference; no `secret` is provided for this client method.
-?
 
 #### Usage remarks
 
