@@ -16,7 +16,7 @@
 
 ## Table of contents
 
--   [Authentication (OAuth2)]()
+-   [Authentication (OAuth2)]() - [Passport]() -
 -   [Asset Bundling (Vite)]()
 -
 
