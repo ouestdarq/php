@@ -8,7 +8,7 @@
 >
 > This infrastructure, for now, manages `authentication` (whom is who) as well as serves the application's resources through
 > various end-points as a (Json only) `programming application interface` or `API`. The `authrization` logic (whom is served what) is left to the `API`.
-> We'll discuss briefly, later on, the adoption of well crafted components for future use and how to adjust for growth.
+> We'll discuss briefly, later on, the adoption of well crafted components for future use and how to adjust for growth on this `API` ecosystem.
 >
 > The `frontend` managment and logic is left to browser-native technologies (i.e. javascript, html, css).
 > Using Node as runtime and NPM to deliver packages; most notably `Vite`, `Vue`, and `Sass`;
@@ -38,7 +38,7 @@ Please check (Symphony) [thephpleague/oauth2-server-bundle](https://github.com/t
 
 ### Passport ([laravel/passport](https://github.com/laravel/passport))
 
-(BACKUP reminder) If project template is being dowloaded of the first time then we'll have to run:
+(BACKUP reminder) If project template is being dowloaded for the first time then we'll have to run:
 
 ```
 php artisan passport:keys
@@ -50,7 +50,7 @@ Public client will have to be created as well with the following command:
 php artisan passport:client --public
 ```
 
-Note the `Client ID` value as it will be important for the future.There is no `secret` for this client method.
+Note; `Client ID` value for future reference; no `secret` is provided for this client method.
 
 `App/Providers/RouteServiceProvider` is currently registering `routes/oauth.php` file which has the records for required routes. These routes are mostly a mimic of the implementation done by the upstream repository with minor syntax tweaks which serve no purpose other than to proceed with further testing of the `guard` clause, which at the moment or writing this rest inconclusive.
 
