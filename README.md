@@ -31,7 +31,7 @@
 ## Authentication ([thephpleague/oauth2-server](https://github.com/thephpleague/oauth2-server))
 
 ThePHPLeague `oauth2-server` provides the infrastructure for the `authentication` stack.
-Per the `oauth2-server` [documentation](https://oauth2.thephpleague.com/), laravel's `Passport` is marked as the official framework implementation.
+Per their [documentation](https://oauth2.thephpleague.com/), laravel's `Passport` is marked as the official framework implementation.
 
 _Recomendations of dropping `password grant` are addressed and all documentation on the topic will be ignored and efforts no longer pursued_
 
