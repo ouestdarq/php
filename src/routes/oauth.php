@@ -25,7 +25,7 @@ use Laravel\Passport\Http\Controllers\TransientTokenController;
 / readability.
 */
 
-Route::view('login', 'auth/authenticate');
+Route::view('login', 'oauth/authenticate');
 
 Route::name('authenticate')
     ->middleware('guest')

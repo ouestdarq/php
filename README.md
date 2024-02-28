@@ -52,11 +52,14 @@ php artisan passport:client --public
 
 Note the `Client ID` value as it will be important for the future.There is no `secret` for this client method.
 
-`routes/oauth.php` file registers the routes for the `/login` view `get` and `post` routes.
-Loaded by `App/Providers/RouteServiceProvider` with `web (middleware)`.
-`post` route logic is managed by `App\Http\Controllers\Auth\AuthenticationController` login method.
+`App/Providers/RouteServiceProvider` is currently registering `routes/oauth.php` file which has the records for required routes. These routes are mostly a mimic of the implementation done by the upstream repository with minor syntax tweaks which serve no purpose other than to proceed with further testing of the `guard` clause, which at the moment or writing this rest inconclusive.
 
-`resources/views/login.blade` is an HTML layout that includes in the document head
+However, file also registers the routes for `/login` as `get` (view) and `post` routes.
+
+-   The `login` view the `get` method retrieves resides within `resources/views/oauth` directory.
+-   The `login` method `post` route follows is in `App\Http\Controllers\OAuth\AuthenticationController`.
+
+`resources/views/oauth/authenticate.blade` is an HTML layout that includes in its document head
 
 ```
 <meta name="csrf-token" content="{{ csrf_token() }}">
