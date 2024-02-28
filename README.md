@@ -52,7 +52,7 @@ php artisan passport:client --public
 
 Note; `Client ID` value for future reference; no `secret` is provided for this client method.
 
-`App/Providers/RouteServiceProvider` is currently registering `routes/oauth.php` file which has the records for required routes. These routes are mostly a mimic of the implementation done by the upstream repository with minor syntax tweaks which serve no purpose other than to proceed with further testing of the `guard` clause, which at the moment or writing this rest inconclusive.
+`App/Providers/RouteServiceProvider` is currently registering `routes/oauth.php` file which has the records for required routes. These routes are mostly a mimic of the implementation done by the upstream `Passport` repository with minor syntax tweaks which serve no purpose other than to proceed with further testing of the `guard` clause, which at the moment of writing this, rest inconclusive.
 
 However, file also registers the routes for `/login` as `get` (view) and `post` routes.
 
