@@ -2,9 +2,12 @@
 
 > Author's NOTES:
 > PHP offers great documentation and an evolving ecosystem that has multiple functionalities to offer, albeit dynamiclly typed and interpreted language.
-> Regardless of it's stigma and/or limitations the language offers intuitive and strightforeword ways to write code and achieve tasks.
+> Regardless of it's stigma and/or limitations the language offers intuitive and strightforeward ways to write code and achieve tasks.
 > `Laravel` framework and its ecosystem inherit the latter, making `backend` infrastructure implementation very concice; marking a starting point
 > for any idea.
+>
+> This infrastructure is, for now, responsable of managing `authentication` (whom is who) as well as serving the application's resources through
+> various end-points as a (Json only) `programming application interface` or `API`. The `authrization` (whom is served what) logic is left to the `API`
 >
 > The `frontend` managment and logic is left to browser-native technologies (i.e. javascript, html, css).
 > Project uses Node as runtime and NPM to deliver packages; most notably `Vite`, `Vue`, and `Sass`;
@@ -16,20 +19,15 @@
 
 ## Table of contents
 
--   [Authentication (OAuth2)]() - [Passport]() -
+-   [Authentication (OAuth2)]()
+    -   [Passport]()
+    -   [Vue]()
+    -   Notes and discussion
 -   [Asset Bundling (Vite)]()
--
+-   [API (laravel-json-api/laravel)]()
+    -   Notes and discussions
 
-Laravel application, at the moment, serves two purposes. `Authentication` and (JSON only) application programming interface `(API)`.
-Both of these functionalities are made possible with the assistance of one or more packages. Most notably we have:
-
--   Laravel's (own) [Passport](https://github.com/laravel/passport) for `authentication`, which seems to be the official implementation of
-    [thephpleague/oauth2-server](https://github.com/thephpleague/oauth2-server).
--   [Laravel JSON API](https://github.com/laravel-json-api/laravel) package for (JSON only) `API`.
-
-\*\* Further research has to be made on these packages. Check [oauth2-server-bundle](https://github.com/thephpleague/oauth2-server-bundle)
-
-## Passport Authentication/Authorization
+## Authentication
 
 Changes to this package have been made that we have yet to explore.
 
