@@ -22,7 +22,7 @@
 
 -   [Authentication (thephpleague/oauth2-server)]()
     -   [Passport](#passport-laravelpassport)
-    -   [Vue]()
+    -   [Vue](#vue)
     -   Notes and discussion
 -   [Asset Bundling (Vite)]()
 -   [API (laravel-json-api/laravel)]
