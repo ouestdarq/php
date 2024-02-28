@@ -61,7 +61,7 @@ However, file also registers the routes for `/login` as `get` (view) and `post` 
 
 ### Passport Vue Components
 
-`resources/views/oauth/authenticate.blade` file that will serve the initial DOM from which the javascript takes over.
+`resources/views/oauth/authenticate.blade` initial DOM from which the javascript takes over.
 
 ```
 <!DOCTYPE html>
