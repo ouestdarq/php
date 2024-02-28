@@ -12,7 +12,7 @@
 >
 > The `frontend` managment and logic is left to browser-native technologies (i.e. javascript, html, css).
 > Using Node as runtime and NPM to deliver packages; most notably `Vite`, `Vue`, and `Sass`;
-> which (at the moment) satisfy most of the frontend needs and should deliver a browser-native "compiled" product (more on that...).
+> which (at the moment) satisfy most of the frontend needs and should deliver a browser-native "compiled" product [more on that...]().
 >
 > We'll try to refrain and include as less javascript as possible (or any other language for that matter)
 > and include only the necessary packages within their respective package manager configuration file.
@@ -22,7 +22,7 @@
 
 -   [Authentication (thephpleague/oauth2-server)]()
     -   [Passport](#passport-laravelpassport)
-    -   [Passport Vue Components](#passport-vue-components)
+        -   [Passport Vue Components](#passport-vue-components)
     -   Notes and discussion
 -   [Asset Bundling (Vite)]()
 -   [API (laravel-json-api/laravel)]
@@ -30,8 +30,12 @@
 
 ## Authentication ([thephpleague/oauth2-server](https://github.com/thephpleague/oauth2-server))
 
-[ThePHPLeague](https://github.com/thephpleague) `oauth2-server` provides the infrastructure for our `authentication` stack.
+[ThePHPLeague](https://github.com/thephpleague) `oauth2-server` provides the infrastructure for the `authentication` stack.
 Per the [documentation](https://oauth2.thephpleague.com/), laravel's `Passport` is marked as the official framework implementation.
+
+Recomendations of dropping `password grant` are addressed and all documentation on the topic will be ignored and efforts no longer pursued.
+
+Implementation of `PKCE` is _server only_. Client side is, in this case left to the client side to implement [more on that]()
 
 \*\* Further research will have to be made on this subject.
 Please check (Symphony) [thephpleague/oauth2-server-bundle](https://github.com/thephpleague/oauth2-server-bundle)
