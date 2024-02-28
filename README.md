@@ -36,41 +36,21 @@ Per the [documentation](https://oauth2.thephpleague.com/), laravel's `Passport` 
 \*\* Further research will have to be made on this subject.
 Please check (Symphony) [thephpleague/oauth2-server-bundle](https://github.com/thephpleague/oauth2-server-bundle)
 
-### Passport [laravel/passport](https://github.com/laravel/passport)
+### Passport ([laravel/passport](https://github.com/laravel/passport))
 
-Changes to this package have been made that we have yet to explore.
-
-However thus far, we've encountered that there is a change in the way passport is registering their routes.
-
-Before, we had more methods available to call the routes since we could register:
+(BACKUP reminder) If project template is being dowloaded of the first time then we'll have to run:
 
 ```
-Passport::routes(
-    function ($router) {
-        $router->forAuthorization();
-        $router->forAccessTokens();
-        $router->forTransientTokens();
-    }
-);
+php artisan passport:keys
 ```
 
-These are no longer available and have been replaced by `Passport::registerRoutes` which registers routes contained within
-`vendor/laravel/passport/routes/web.php` if `Passport::$registersRoutes` is false which can be accomplished by declaring either
-of the following on the `boot` method of `app/Providers/AppServiceProvider`.
+Public client will have to be created as well with the following command:
 
 ```
-Passport::ignoreRoutes();
-Passport::$registersRoutes = false;
+php artisan passport:client --public
 ```
 
-\*\* I fail to see what is the use behind having a static method `Passport::registerRoutes` that both changes the `public static variable ($registersRoutes)` to `false` and returns a `new static (Passport::class)` rathen than just changing the static variable value.
-
-Same thing can be said for methods like:
-
--   `Passport::hashClientSecrets`
--   `Passport::ignoreMigrations`
-
-\*\* fail to understand as well why is it that we are returning a `new static` instead of `$this` for example.
+Note the `Client ID` value as it will be important for the future.There is no `secret` for this client method.
 
 `routes/oauth.php` file registers the routes for the `/login` view `get` and `post` routes.
 Loaded by `App/Providers/RouteServiceProvider` with `web (middleware)`.
@@ -99,17 +79,3 @@ laravel({
 ```
 
 ### Installation
-
-If project template is being used of the first time then we'll have to run:
-
-```
-php artisan passport:keys
-```
-
-Public client will have to be created as well with the following command:
-
-```
-php artisan passport:client --public
-```
-
-Note the client ID as it will be important for the future.There is no Client Secret for this auth method.
