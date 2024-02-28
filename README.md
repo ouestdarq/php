@@ -8,11 +8,11 @@
 >
 > This infrastructure, for now, manages `authentication` (whom is who) as well as serves the application's resources through
 > various end-points as a (Json only) `programming application interface` or `API`. The `authrization` logic (whom is served what) is left to the `API`.
-> We'll discuss briefly ,later on, the adoption of well crafted components for future use and how to adjust for growth.
+> We'll discuss briefly, later on, the adoption of well crafted components for future use and how to adjust for growth.
 >
 > The `frontend` managment and logic is left to browser-native technologies (i.e. javascript, html, css).
 > Project uses Node as runtime and NPM to deliver packages; most notably `Vite`, `Vue`, and `Sass`;
-> which satisfy most of the frontend needs (at the moment). And should deliver a browser-native compiled product (more on that...).
+> which (at the moment) satisfy most of the frontend needs and should deliver a browser-native "compiled" product (more on that...).
 >
 > We'll try to refrain and include as less javascript as possible (or any other language for that matter)
 > and include only the necessary packages within their respective package manager configuration file.
@@ -30,13 +30,13 @@
 
 ## Authentication ([thephpleague/oauth2-server](https://github.com/thephpleague/oauth2-server))
 
-[ThePHPLeague](https://github.com/thephpleague) `oauth2-server` serves as the infrastructure of our `authentication` stack.
+[ThePHPLeague](https://github.com/thephpleague) `oauth2-server` provides the infrastructure for our `authentication` stack.
 Per the [documentation](https://oauth2.thephpleague.com/), laravel's `Passport` is marked as the official framework implementation.
 
 \*\* Further research will have to be made on this subject.
 Please check (Symphony) [thephpleague/oauth2-server-bundle](https://github.com/thephpleague/oauth2-server-bundle)
 
-### [Passport](https://github.com/laravel/passport)
+### Passport [laravel/passport](https://github.com/laravel/passport)
 
 Changes to this package have been made that we have yet to explore.
 
