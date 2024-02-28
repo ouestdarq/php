@@ -21,7 +21,7 @@
 ## Table of contents
 
 -   [Authentication (thephpleague/oauth2-server)]()
-    -   [Passport]()
+    -   [Passport](#passport-laravelpassport)
     -   [Vue]()
     -   Notes and discussion
 -   [Asset Bundling (Vite)]()
@@ -58,6 +58,8 @@ However, file also registers the routes for `/login` as `get` (view) and `post` 
 
 -   The `login` view the `get` method retrieves resides within `resources/views/oauth` directory.
 -   The `login` method `post` route follows is in `App\Http\Controllers\OAuth\AuthenticationController`.
+
+### Vue
 
 `resources/views/oauth/authenticate.blade` is an HTML layout that includes in its document head
 
