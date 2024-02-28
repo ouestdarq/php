@@ -35,11 +35,12 @@ Per their [documentation](https://oauth2.thephpleague.com/), laravel's `Passport
 
 _Recomendations of dropping `password grant` are addressed and all documentation on the topic will be ignored and efforts no longer pursued_
 
-Implementation of `PKCE` is **server only**. Client side is, left to the client side to implement [more on that]()
-
 `PKCE` is the only implementation being explored by this project, so far. There is enough reason to believe that
 there will be a need to leverage the whole package. Currently speaking of `laravel/passport` but migration to the core `thephpleague/oauth2-server`
 is possible.
+
+PHP Implementation of `PKCE` treated on project is **server only**. `PKCE Client` side is, left for `client` to implement
+[proxymurder/vite](https://github.com/proxymurder/vite)
 
 The final solution to the authentication question has yet to be discussed on a broader spectrum,
 proposed solutions at the moment are monolithic and conservative, whereas the ideal solution should offer the correct ammounts of freadom,
