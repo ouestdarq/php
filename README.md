@@ -20,8 +20,9 @@
 
 ## Table of contents
 
--   [Authentication (thephpleague/oauth2-server)]()
+-   [Authentication (thephpleague/oauth2-server)](#authentication-thephpleagueoauth2-server)
     -   [Passport](#passport-laravelpassport)
+        -   [Usage remarks](#usage-remarks)
         -   [Passport Vue Components](#passport-vue-components)
     -   Notes and discussion
 -   [Asset Bundling (Vite)]()
@@ -53,13 +54,15 @@ Please check (Symphony) [thephpleague/oauth2-server-bundle](https://github.com/t
 
 ### Passport ([laravel/passport](https://github.com/laravel/passport))
 
-(_reminder_) If project template is being dowloaded for the first time then we'll have to run:
+_reminder_
+
+Install passport keys (only after downloading)
 
 ```
 php artisan passport:keys
 ```
 
-Public client will have to be created as well with the following command:
+Create `Passport Public Client`
 
 ```
 php artisan passport:client --public
@@ -69,14 +72,16 @@ Please note `Client ID` value for future reference; no `secret` is provided for 
 
 #### Usage remarks
 
-`App/Providers/RouteServiceProvider` is currently registering `routes/oauth.php` file which has the records for required routes. These routes are mostly a mimic of the implementation done by the upstream `Passport` repository with minor syntax tweaks which serve no purpose other than to proceed with further testing of the `guard` clause, which at the moment of writing this, rest inconclusive.
+`App/Providers/RouteServiceProvider` is currently registering `routes/oauth.php` file which has the records for required routes.
+
+These routes are mostly a mimic of the implementation done by the upstream `Passport` repository with minor syntax tweaks which serve no purpose other than to proceed with further testing of the `guard` clause, which at the moment of writing this, rest inconclusive.
 
 However, file also registers the routes for `/login` as `get` (view) and `post` routes.
 
 -   `login` view, `get` method retrieves resides within `resources/views/oauth` directory.
 -   `login` method, `post` route follows is in `App\Http\Controllers\OAuth\AuthenticationController`.
 
-### Passport Vue Components
+#### Passport Vue Components
 
 `resources/views/oauth/authenticate.blade` initial DOM from which the javascript takes over.
 
