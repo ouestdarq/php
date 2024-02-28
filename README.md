@@ -46,14 +46,14 @@ The final solution to the authentication question has yet to be discussed on a b
 proposed solutions at the moment are monolithic and conservative, whereas the ideal solution should offer the correct ammounts of freadom,
 privacy and security to the average user despite their knowledge on the subject.
 
-\*\* authentication` being it's own project has yet to be explored.
+\*\* `authentication` being it's own project has yet to be explored.
 
 \*\* Further research will have to be made on this subject.
 Please check (Symphony) [thephpleague/oauth2-server-bundle](https://github.com/thephpleague/oauth2-server-bundle)
 
 ### Passport ([laravel/passport](https://github.com/laravel/passport))
 
-(BACKUP reminder) If project template is being dowloaded for the first time then we'll have to run:
+(_reminder_) If project template is being dowloaded for the first time then we'll have to run:
 
 ```
 php artisan passport:keys
