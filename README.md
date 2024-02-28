@@ -6,7 +6,7 @@
 > of any idea.
 >
 > The frontend managment and logic is left to native browser technologies (i.e. javascript, html, css). Project uses Node as runtime and NPM to deliver
-> packages; most notably VITE, VUE, sass, and bootstrap-scss. The latter satisfy most of the frontend needs (at the moment).
+> packages; most notably `VITE`, VUE, sass, and bootstrap-scss. The latter satisfy most of the frontend needs (at the moment).
 > We'll try and refrain to include as much javascript (or any other language for that matter) and include only the necessary packages in their
 > respective package manager. Excempt for a few instructions probably on how to install them, there should not be that much "mixing".
 
