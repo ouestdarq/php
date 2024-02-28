@@ -3,7 +3,7 @@
 > PHP offers great documentation and an evolving ecosystem that has a lot to offer, albeit dynamiclly typed and interpreted language.
 > Regardless of it's stigma and/or limitations the language offers intuitive and strightforeword ways to write code and achieve tasks.
 > `Laravel` framework and its ecosystem inherit the latter, making `backend` infrastructure implementation very concice; marking a starting point
-> of any idea.
+> for any idea.
 >
 > The `frontend` managment and logic is left to native browser technologies (i.e. javascript, html, css).
 > Project uses Node as runtime and NPM to deliver packages; most notably `VITE`, `VUE`, `sass`, and `bootstrap-scss`.
