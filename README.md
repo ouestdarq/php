@@ -1,7 +1,7 @@
 # Laravel Application
 
 > Author's NOTES:
-> PHP offers great documentation in an evolving ecosystem that has, as well, multiple functionalities, albeit dynamiclly typed and interpreted language.
+> PHP offers great documentation in an evolving ecosystem that has multiple functionalities, albeit dynamiclly typed and interpreted language.
 > Regardless of it's stigma and/or limitations the language offers intuitive and strightforeward ways to write code and achieve tasks.
 > `Laravel` framework and its ecosystem inherit the latter, making `backend` infrastructure implementation very concice; marking a starting point
 > for any idea.
