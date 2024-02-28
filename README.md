@@ -16,7 +16,7 @@
 >
 > We'll try to refrain and include as less javascript as possible (or any other language for that matter)
 > and include only the necessary packages within their respective package manager configuration file.
-> Excempt for a few instructions probably on how to install and use, there should not be that much **mixing**.
+> Excempt for a few instructions probably on how to install and use, there should not be that much _mixing_.
 
 ## Table of contents
 
@@ -31,11 +31,11 @@
 ## Authentication ([thephpleague/oauth2-server](https://github.com/thephpleague/oauth2-server))
 
 [ThePHPLeague](https://github.com/thephpleague) `oauth2-server` provides the infrastructure for the `authentication` stack.
-Per the [documentation](https://oauth2.thephpleague.com/), laravel's `Passport` is marked as the official framework implementation.
+Per the `oauth2-server` [documentation](https://oauth2.thephpleague.com/), laravel's `Passport` is marked as the official framework implementation.
 
-Recomendations of dropping `password grant` are addressed and all documentation on the topic will be ignored and efforts no longer pursued.
+_Recomendations of dropping `password grant` are addressed and all documentation on the topic will be ignored and efforts no longer pursued_
 
-Implementation of `PKCE` is _server only_. Client side is, in this case left to the client side to implement [more on that]()
+Implementation of `PKCE` is **server only**. Client side is, in this case left to the client side to implement [more on that]()
 
 \*\* Further research will have to be made on this subject.
 Please check (Symphony) [thephpleague/oauth2-server-bundle](https://github.com/thephpleague/oauth2-server-bundle)
