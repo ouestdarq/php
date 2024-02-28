@@ -22,7 +22,7 @@
 
 -   [Authentication (thephpleague/oauth2-server)]()
     -   [Passport](#passport-laravelpassport)
-    -   [Vue](#vue)
+    -   [Passport Vue Components](#passport-vue-components)
     -   Notes and discussion
 -   [Asset Bundling (Vite)]()
 -   [API (laravel-json-api/laravel)]
@@ -56,19 +56,26 @@ Note; `Client ID` value for future reference; no `secret` is provided for this c
 
 However, file also registers the routes for `/login` as `get` (view) and `post` routes.
 
--   The `login` view the `get` method retrieves resides within `resources/views/oauth` directory.
--   The `login` method `post` route follows is in `App\Http\Controllers\OAuth\AuthenticationController`.
+-   `login` view, `get` method retrieves resides within `resources/views/oauth` directory.
+-   `login` method, `post` route follows is in `App\Http\Controllers\OAuth\AuthenticationController`.
 
-### Vue
+### Passport Vue Components
 
-`resources/views/oauth/authenticate.blade` is an HTML layout that includes in its document head
+`resources/views/oauth/authenticate.blade` file that will serve the initial DOM from which the javascript takes over.
 
 ```
-<meta name="csrf-token" content="{{ csrf_token() }}">
+<!DOCTYPE html>
+...
+<head>
+...
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    @vite('resources/js/login.js')
+</head>
+...
+<body id="app">
+</body>
+</html>
 
-<title>{{ config('app.name') }}</title>
-
-@vite('resources/js/login.js')
 ```
 
 and mounts a Vue "app" in `body#app` that has at the moment only two components. The login form and the login view. That should take care of the front-end logic (only).
