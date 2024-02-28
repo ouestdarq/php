@@ -11,7 +11,7 @@
 > We'll discuss briefly, later on, the adoption of well crafted components for future use and how to adjust for growth.
 >
 > The `frontend` managment and logic is left to browser-native technologies (i.e. javascript, html, css).
-> Project uses Node as runtime and NPM to deliver packages; most notably `Vite`, `Vue`, and `Sass`;
+> Using Node as runtime and NPM to deliver packages; most notably `Vite`, `Vue`, and `Sass`;
 > which (at the moment) satisfy most of the frontend needs and should deliver a browser-native "compiled" product (more on that...).
 >
 > We'll try to refrain and include as less javascript as possible (or any other language for that matter)
