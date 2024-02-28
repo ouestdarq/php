@@ -37,6 +37,15 @@ _Recomendations of dropping `password grant` are addressed and all documentation
 
 Implementation of `PKCE` is **server only**. Client side is, left to the client side to implement [more on that]()
 
+`PKCE` is the only implementation being explored by this project, so far. There is enough reason to believe that
+there will be a need to leverage the whole package. Currently speaking of `laravel/passport` but migration to the core `thephpleague/oauth2-server`
+is possible.
+
+The final solution to the authentication question has yet to be discussed on a broader spectrum,
+proposed solutions at the moment are monolithic and conservative, whereas the ideal solution should offer the correct ammounts of freadom,
+privacy and security to the average user despite their knowledge on the subject.
+That being said, the idea of `authentication` being it's own project is tempting and has yet to be explored.
+
 \*\* Further research will have to be made on this subject.
 Please check (Symphony) [thephpleague/oauth2-server-bundle](https://github.com/thephpleague/oauth2-server-bundle)
 
