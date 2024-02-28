@@ -44,7 +44,8 @@ is possible.
 The final solution to the authentication question has yet to be discussed on a broader spectrum,
 proposed solutions at the moment are monolithic and conservative, whereas the ideal solution should offer the correct ammounts of freadom,
 privacy and security to the average user despite their knowledge on the subject.
-That being said, the idea of `authentication` being it's own project is tempting and has yet to be explored.
+
+\*\* authentication` being it's own project has yet to be explored.
 
 \*\* Further research will have to be made on this subject.
 Please check (Symphony) [thephpleague/oauth2-server-bundle](https://github.com/thephpleague/oauth2-server-bundle)
