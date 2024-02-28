@@ -51,7 +51,7 @@ php artisan passport:keys
 Public client will have to be created as well with the following command:
 
 ```
-php artisan passport:client --public lol
+php artisan passport:client --public
 ```
 
 Please note `Client ID` value for future reference; no `secret` is provided for this client method.
