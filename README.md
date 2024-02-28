@@ -35,7 +35,7 @@ Per the `oauth2-server` [documentation](https://oauth2.thephpleague.com/), larav
 
 _Recomendations of dropping `password grant` are addressed and all documentation on the topic will be ignored and efforts no longer pursued_
 
-Implementation of `PKCE` is **server only**. Client side is, in this case left to the client side to implement [more on that]()
+Implementation of `PKCE` is **server only**. Client side is, left to the client side to implement [more on that]()
 
 \*\* Further research will have to be made on this subject.
 Please check (Symphony) [thephpleague/oauth2-server-bundle](https://github.com/thephpleague/oauth2-server-bundle)
