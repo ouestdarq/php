@@ -6,8 +6,9 @@
 > `Laravel` framework and its ecosystem inherit the latter, making `backend` infrastructure implementation very concice; marking a starting point
 > for any idea.
 >
-> This infrastructure is, for now, responsable of managing `authentication` (whom is who) as well as serving the application's resources through
-> various end-points as a (Json only) `programming application interface` or `API`. The `authrization` (whom is served what) logic is left to the `API`
+> This infrastructure is, for now, manages `authentication` (whom is who) as well as serves the application's resources through
+> various end-points as a (Json only) `programming application interface` or `API`. The `authrization` logic (whom is served what) is left to the `API`.
+> We'll discuss briefly ,later on, the adoption of well crafted components for future use and how to adjust for growth.
 >
 > The `frontend` managment and logic is left to browser-native technologies (i.e. javascript, html, css).
 > Project uses Node as runtime and NPM to deliver packages; most notably `Vite`, `Vue`, and `Sass`;
@@ -19,15 +20,23 @@
 
 ## Table of contents
 
--   [Authentication (OAuth2)]()
+-   [Authentication (thephpleague/oauth2-server)]()
     -   [Passport]()
     -   [Vue]()
     -   Notes and discussion
 -   [Asset Bundling (Vite)]()
--   [API (laravel-json-api/laravel)]()
-    -   Notes and discussions
+-   [API (laravel-json-api/laravel)]
+    -   Notes and discussion
 
-## Authentication
+## Authentication ([thephpleague/oauth2-server](https://github.com/thephpleague/oauth2-server))
+
+[ThePHPLeague](https://github.com/thephpleague) `oauth2-server` serves as the infrastructure of our `authentication` stack.
+Per the [documentation](https://oauth2.thephpleague.com/), laravel's `Passport` is marked as the official framework implementation.
+
+\*\* Further research will have to be made on this subject.
+Please check (Symphony) [thephpleague/oauth2-server-bundle](https://github.com/thephpleague/oauth2-server-bundle)
+
+### [Passport](https://github.com/laravel/passport)
 
 Changes to this package have been made that we have yet to explore.
 
