@@ -16,7 +16,7 @@
 >
 > We'll try to refrain and include as less javascript as possible (or any other language for that matter)
 > and include only the necessary packages within their respective package manager configuration file.
-> Excempt for a few instructions probably on how to install and use, there should not be that much `mixing`.
+> Excempt for a few instructions probably on how to install and use, there should not be that much **mixing**.
 
 ## Table of contents
 
