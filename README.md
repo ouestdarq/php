@@ -75,8 +75,29 @@ However, file also registers the routes for `/login` as `get` (view) and `post` 
 <body id="app">
 </body>
 </html>
+```
+
+The previous code snippet shows only one way to do this.
+Since at that point of execution we're still in the domain of PHP, the csrf_token can be passed as a prop,
+TODO:
 
 ```
+<!DOCTYPE html>
+...
+<head>
+...
+    @vite('resources/js/login.js')
+</head>
+...
+<body id="app">
+    <login-view :csrf-token-prop="{{ csrf_token() }}"
+</body>
+</html>
+```
+
+None of the above seem to differ in any way other than semantics but testing has yet to prove that. Yet the ilustrate the broader area
+being explored, the questions mainly remain. Is it worth breaking out of blade so quickly or could I have better results in the long run?
+Can I never use blade (now that I think about it)? Security issues? Scalability issue just to mention a few of the wide area concerns.
 
 and mounts a Vue "app" in `body#app` that has at the moment only two components. The login form and the login view. That should take care of the front-end logic (only).
 
