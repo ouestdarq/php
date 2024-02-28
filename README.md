@@ -6,7 +6,7 @@
 > `Laravel` framework and its ecosystem inherit the latter, making `backend` infrastructure implementation very concice; marking a starting point
 > for any idea.
 >
-> This infrastructure is, for now, manages `authentication` (whom is who) as well as serves the application's resources through
+> This infrastructure, for now, manages `authentication` (whom is who) as well as serves the application's resources through
 > various end-points as a (Json only) `programming application interface` or `API`. The `authrization` logic (whom is served what) is left to the `API`.
 > We'll discuss briefly ,later on, the adoption of well crafted components for future use and how to adjust for growth.
 >
