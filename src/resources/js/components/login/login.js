@@ -1,8 +1,8 @@
 import "@/scss/app.scss";
 
 import { createApp } from "vue";
-import { prefersColor, prefersColorScheme } from "./prefersColorScheme.js";
-import LoginView from "./components/login/View.vue";
+import { prefersColor, prefersColorScheme } from "@/js/prefersColorScheme.js";
+import LoginView from "./View.vue";
 
 const themeAttribute = "data-bs-theme";
 

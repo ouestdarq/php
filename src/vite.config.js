@@ -17,8 +17,9 @@ export default defineConfig(async ({ mode }) => {
         resolve: {
             alias: {
                 "~": path.resolve(__dirname, "./node_modules"),
-                "@": path.resolve(__dirname, "./resources"),
-                vue: "vue/dist/vue.esm-bundler.js",
+                "@": path.resolve(__dirname, "./resources/js"),
+                "@": path.resolve(__dirname, "./resources/scss"),
+                // vue: "vue/dist/vue.esm-bundler.js",
             },
         },
         plugins: [

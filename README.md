@@ -24,8 +24,7 @@
     -   [Passport](#passport-laravelpassport)
         -   [Usage remarks](#usage-remarks)
         -   [Passport Vue Components](#passport-vue-components)
-    -   Notes and discussion
--   [Asset Bundling (Vite)]()
+-   [Asset Bundling (Vite)](#asset-bundling-vite)
 -   [API (laravel-json-api/laravel)]
     -   Notes and discussion
 
@@ -34,11 +33,15 @@
 ThePHPLeague `oauth2-server` provides the infrastructure for the `authentication` stack.
 Per their [documentation](https://oauth2.thephpleague.com/), laravel's `Passport` is marked as the official framework implementation.
 
-_Recomendations of dropping `password grant` are addressed and all documentation on the topic will be ignored and efforts no longer pursued_
+_All documentation on `password grant` will be ignored and efforts no longer pursued_
 
 `PKCE` is the only implementation being explored by this project, so far. There is enough reason to believe that
-there will be a need to leverage the whole package. Currently speaking of `laravel/passport` but migration to the core `thephpleague/oauth2-server`
-is possible.
+there will be need to leverage the whole package further down the line.
+
+Currently speaking of `laravel/passport` yet migration to core`thephpleague/oauth2-server` have not yet been discarded.
+
+\*\* Further research will have to be made on this subject.
+Please check (Symphony) [thephpleague/oauth2-server-bundle](https://github.com/thephpleague/oauth2-server-bundle)
 
 PHP Implementation of `PKCE` treated on project is **server only**. `PKCE Client` side is, left for `client` to implement
 [proxymurder/vite](https://github.com/proxymurder/vite)
@@ -49,12 +52,7 @@ privacy and security to the average user despite their knowledge on the subject.
 
 \*\* `authentication` being it's own project has yet to be explored.
 
-\*\* Further research will have to be made on this subject.
-Please check (Symphony) [thephpleague/oauth2-server-bundle](https://github.com/thephpleague/oauth2-server-bundle)
-
 ### Passport ([laravel/passport](https://github.com/laravel/passport))
-
-_reminder_
 
 Install passport keys (only after downloading)
 
@@ -72,18 +70,33 @@ Please note `Client ID` value for future reference; no `secret` is provided for 
 
 #### Usage remarks
 
-`App/Providers/RouteServiceProvider` is currently registering `routes/oauth.php` file which has the records for required routes.
+Project manages both `migrations` and `routes` for `passport`. Passport state is modified in `app/Providers/AppServiceProvider`
 
-These routes are mostly a mimic of the implementation done by the upstream `Passport` repository with minor syntax tweaks which serve no purpose other than to proceed with further testing of the `guard` clause, which at the moment of writing this, rest inconclusive.
+```
+Passport::ignoreMigratios()
+->ignoreRoutes();
+```
 
-However, file also registers the routes for `/login` as `get` (view) and `post` routes.
+Concerning database, `Users` and `Clients` are stored with `UUIDs` instead of incrementing integers,
+therefore `passport` migrations have been published and are locally available in `database/migrations` directory.
 
--   `login` view, `get` method retrieves resides within `resources/views/oauth` directory.
--   `login` method, `post` route follows is in `App\Http\Controllers\OAuth\AuthenticationController`.
+Required routes are registered in `App/Providers/RouteServiceProvider` through `routes/oauth.php` file.
+
+Routes mostly mimic the implementation done by the upstream `passport` repository with minor syntax tweaks which serve no purpose other than to proceed with further testing of the `guard` clause, which at the moment of writing this, rest inconclusive.
+
+However, file registers the routes `/login` as `get` (view) and `post` routes.
+
+-   `get` method serves the `login` view within `resources/views/oauth` directory called `authenticate`.
+-   `post` route follows `login` method in `App\Http\Controllers\OAuth\AuthenticationController`.
 
 #### Passport Vue Components
 
-`resources/views/oauth/authenticate.blade` initial DOM from which the javascript takes over.
+The Vue components are located inside `resources/js/components/login`.
+
+There are two components which will be subject to multiple changes, however for now we have a `login/view` which has no major logic to it
+other than provide a view container and handle any `prefersColorScheme` changes and`login/form` which structures and submits data.
+
+Initial DOM from which the javascript takes over is provided by `resources/views/oauth/authenticate.blade`.
 
 ```
 <!DOCTYPE html>
@@ -101,7 +114,8 @@ However, file also registers the routes for `/login` as `get` (view) and `post` 
 
 The previous code snippet shows only one way to do this.
 Since at that point of execution we're still in the domain of PHP, the csrf_token can be passed as a prop,
-TODO:
+
+_TODO:_
 
 ```
 <!DOCTYPE html>
@@ -119,9 +133,9 @@ TODO:
 
 None of the above seem to differ in any way other than semantics but testing has yet to prove that. Yet the ilustrate the broader area
 being explored, the questions mainly remain. Is it worth breaking out of blade so quickly or could I have better results in the long run?
-Can I never use blade (now that I think about it)? Security issues? Scalability issue just to mention a few of the wide area concerns.
+Can I never use blade (now that I think about it)? Security issues? Scalability issues?... just to mention a few of the wide area concerns.
 
-and mounts a Vue "app" in `body#app` that has at the moment only two components. The login form and the login view. That should take care of the front-end logic (only).
+### Asset Bundling ([Vite](https://github.com/vitejs/vite))
 
 Inside `vite.config.js` we declare within the plugins the correct js that will be executing this task as well.
 
@@ -132,5 +146,3 @@ laravel({
     ],
 }),
 ```
-
-### Installation
